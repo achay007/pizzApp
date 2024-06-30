@@ -1,10 +1,7 @@
-function App() {
+//import React from 'react'
+
+export default function App() {
   return (
-    <>
-      <h1>Vite + React</h1>
-      
-    </>
+    <div>App</div>
   )
 }
-
-export default App
