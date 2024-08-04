@@ -1,10 +1,6 @@
 // Test ID: IIDSAT
 
-import {
-  calcMinutesLeft,
-  formatCurrency,
-  formatDate,
-} from "../../utils/helpers";
+import {formatDate,calcMinutesLeft,formatCurrency} from '../utils/helpers'
 
 const order = {
   id: "ABCDEF",
@@ -53,7 +49,7 @@ function Order() {
     cart,
   } = order;
   const deliveryIn = calcMinutesLeft(estimatedDelivery);
-
+  console.log(id,cart)
   return (
     <div>
       <div>
