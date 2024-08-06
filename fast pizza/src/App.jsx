@@ -9,6 +9,7 @@ import Order from './features/order/Order'
 import AppLayout from './uicomps/AppLayout'
 import Error from './uicomps/Error'
 import { loader as orderLoader } from './features/order/Order'
+import  {action as createOrderAction} from './features/order/CreateOrder'
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,8 @@ const router = createBrowserRouter([
       },
       {
         path:'/order/new',
-        element: <CreateOrder />
+        element: <CreateOrder />,
+        action: createOrderAction,  // custom action to create the order in the store (this is just a mock, in a real app you'd use a real action creator)
       },
       {
         path:'/order/:orderId',
