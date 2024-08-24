@@ -14,11 +14,13 @@ import  {action as createOrderAction} from './features/order/CreateOrder'
 const router = createBrowserRouter([
   {
     element:<AppLayout/>,
+    errorElement: <Error/>,
     
     children:[
       {
         path:'/',
-        element: <Home />
+        element: <Home />,
+        errorElement : <Error />,
       },
       {
         path:'/menu',
@@ -28,19 +30,21 @@ const router = createBrowserRouter([
       },
       {
         path:'/cart',
-        element: <Cart />
+        element: <Cart />,
+
       },
       {
         path:'/order/new',
         element: <CreateOrder />,
-        action: createOrderAction,  // custom action to create the order in the store (this is just a mock, in a real app you'd use a real action creator)
+        action: createOrderAction,
+        // custom action to create the order in the store (this is just a mock, in a real app you'd use a real action creator)
       },
       {
         path:'/order/:orderId',
         element: <Order />,
         loader: orderLoader,
-        errorElement : <Error />,
-      }
+
+      },
     ]
   },
   
