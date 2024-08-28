@@ -8,6 +8,7 @@ function Header() {
     <header className='bg-yellow-300 uppercase p-4
                       border-b border-stone-200 sm:px-6
                       flex items-center justify-between
+                      
     '>
         <Link to="/" className='tracking-widest'> Fast React Pizza Co.</Link>
         <SearchOrder />
