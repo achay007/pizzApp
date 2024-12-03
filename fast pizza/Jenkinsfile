@@ -13,6 +13,7 @@ pipeline {
                 sh '''
                 node --version
                 npm --version
+                cd "fast pizza"
                 npm ci
                 npm run
                 ls -la
