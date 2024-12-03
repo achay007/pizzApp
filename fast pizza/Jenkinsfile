@@ -14,8 +14,8 @@ pipeline {
                 node --version
                 npm --version
                 cd "fast pizza"
-                sh 'npm install'
-                sh 'npx vite build'
+                npm install
+                npx vite build
                 ls -la
                 '''
             }
