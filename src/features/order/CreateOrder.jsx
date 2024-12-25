@@ -2,6 +2,7 @@
 //import { useState } from "react";
 
 // https://uibakery.io/regex-library/phone-number
+import { useSelector } from "react-redux";
 const isValidPhone = (str) =>
   /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/.test(
     str
@@ -36,6 +37,7 @@ const fakeCart = [
 function CreateOrder() {
   // const [withPriority, setWithPriority] = useState(false);
   const cart = fakeCart;
+  const username = useSelector((state) => state.user.username);
   const navigation = useNavigation()
   const isSubmitting = navigation.state === "submitting";
   const formErrors = useActionData()
@@ -46,7 +48,7 @@ function CreateOrder() {
       <Form method="POST">
         <div className="mb-5 flex gap-2 flex-col sm:flex-row sm:items-center">
           <label className="sm:basis-40">First Name</label>
-          <input type="text" name="customer" required className="input grow" />
+          <input type="text" name="customer" required defaultValue={username} className="input grow" />
         </div>
 
         <div className="mb-5 flex gap-2 flex-col sm:flex-row sm:items-center">
